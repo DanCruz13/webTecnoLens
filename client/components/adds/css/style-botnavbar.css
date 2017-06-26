@@ -1,0 +1,295 @@
+.toggle-menu
+{
+  position: fixed;
+  padding: 15px 20px 15px 15px;
+  margin-top: 70px;
+  color: white;
+  background-color: rgba(17, 17, 17, 0.7);
+  z-index: 1000000;
+  font-size: 2em;
+  opacity: 0;
+}
+
+.icon-show:hover
+{
+  opacity: 0.6;
+  cursor: pointer;
+}
+.sidebar-menu
+{
+  position: relative;
+  width: 250px;
+  margin-left: 0px;
+  overflow: hidden;
+  height: 76.5vh;
+  max-height: 100vh;
+  background-color: rgba(17, 17, 17, 0.9);
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+}
+
+.remove-close 
+{
+  left: 230px;
+  top: 10px;
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.remove-close:hover
+{
+  opacity: 1;
+} 
+
+.boxed-item
+{
+  font-family: 'Open Sans';
+  font-weight: 200;
+  padding: 10px 20px;
+  display: inline-block;
+  border: solid 2px white;
+  box-sizing: border-box;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.logo-bold 
+{
+  font-weight: 800;
+}
+
+.logo-title
+{
+  color: white;
+  font-family: 'Open Sans';
+  font-weight: 200;
+  font-size: 12px;
+  text-align: center;
+}
+
+.navigation-selection
+{
+  margin: 20px 0;
+  display: block;
+  width: 200px;
+  margin-left: -15px;
+}
+
+.navigation-item
+{
+  list-style: none;
+  font-weight: 200;
+  font-family: 'Open Sans';
+  color: white;
+  padding: 12px 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #D8D8D8;
+  border-bottom: solid 1px #D8D8D8;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.boxed-item-smaller
+{
+  font-size: 12px;
+  color: #D8D8D8;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-width: 1px;
+  margin: 0 0 20px 0;
+}
+
+.boxed-item-smaller:hover
+{
+  background-color: white;
+  color: #111;
+  transition: all 0.3s ease-in-out;
+}
+
+.hide-menu
+{
+  margin-left: -250px;
+}
+
+.opacity-one
+{
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+#c-slider 
+{
+  margin: 20px 20px 20px 20px;
+  height: 300px;
+  width: 85%;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0  10px #fff,
+              0 15px 50px;
+
+}
+
+#slider
+{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 400%;
+  height: 300px;
+}
+
+#slider section
+{
+  width: 100%;
+}
+
+#slider img
+{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#btn-prev, #btn-next
+{
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.7);
+  position: absolute;
+  top: 50%;
+  transition-delay: translateY(-50%);
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+#btn-prev:hover, #btn-next:hover
+{
+  background: rgba(255,255,255,1);
+}
+
+#btn-prev 
+{
+  left: 10px;
+}
+
+#btn-next 
+{
+  right: 10px;
+}
+
+
+/*Slider styles of login*/
+.slides-navigation a {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  border-radius: 50%
+}
+
+.slides-navigation a:hover { background: #000; }
+
+.description-s 
+{
+  background: rgba(255,255,255,0.8);
+  color: #000;
+  padding: 20px;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 20px;
+}
+
+.login-s
+{
+  width: 500px;
+  height: 500px;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 20px;
+}
+
+/*Ennd Slider styles of login*/
+
+/*Top Navbar*/
+.topnav
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(17, 17, 17, 0.9);
+  opacity: 0.9;
+  color: white;
+}
+
+.topnav li { float: left; }
+
+.topnav li img 
+{
+  width: 60px;
+}
+
+.nav-left 
+{
+  float: left;
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-right
+{
+  float: left;
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*End of Top Navbar*/
+
+.bottomnav
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(17, 17, 17, 0.9);
+  position: relative;
+  opacity: 0.9;
+  color: white;
+  bottom: 0;
+  width: 100%
+}
+
+.bottomnav li { float: left; }
+
+.bottomnav li img 
+{
+  width: 60px;
+}

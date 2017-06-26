@@ -1,0 +1,191 @@
+<div class="table-des">
+		<h1 class="text-center">Edicion de Materiales</h1>	
+		<ul class="nav nav-tabs">
+		   	<li role="presentation" ng-class="">
+		  		<a ng-click="">
+		  			Ojo {{materialOrder[0].ojo}}
+		  		</a>
+	  		</li>
+ 
+		  	<li role="presentation" ng-class="">
+		  		<a ng-click="">
+		  			Ojo {{materialOrder[1].ojo}}
+		  		</a>
+	  		</li>
+		</ul>
+		<ul>
+			<div class="margin-top-5">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-1">
+					<form class="form-horizontal container-fluid">
+					
+					<!-- Panel Primer Ojo -->
+					<div class="panelOjo">
+						<!-- Panel de Seleccion de Tipo de Material -->
+				  		<div class="form-group">
+				    		<label for="{{material.nombre_tm}}" class="col-md-3 control-label">Tipo de Material:</label>
+				    		<div class="col-md-5">
+				      			<input type="text" class="form-control" id="{{material.nombre_tm}}" value="{{ordenDerecho.nombre_tm}}">
+				    		</div>
+				    		<div class="dropdown col-md-4">
+				      		<button 	class="btn btn-default dropdown-toggle" 
+				      					type="button" 
+				      					id="dropdownMaterial" 
+						      			data-toggle="dropdown" 
+						      			aria-haspopup="true" 
+					      			aria-expanded="true"
+	      			       	>
+				    	   		 Selecciona Tipo de material...
+				        		<span class="caret"></span>
+				      		</button>
+				      		<ul class="dropdown-menu w-100" aria-labelledby="dropdownMaterial">
+				        		<li ng-repeat="allTM in allTypesMaterials">
+				        			<a class="dropdown-list">{{allTM.nombre}}</a>
+			        			</li>
+				      		</ul>
+				    		</div>
+				  		</div>
+						<!-- Termina Panel de Seleccion de Tipo de Material -->
+						
+						<!-- Panel de Seleccion de Material -->
+					  	<div class="form-group">
+					    	<label for="{{material.nombre_mat}}" class="col-md-3 control-label">Material:</label>
+					    	<div class="col-md-5">
+					      		<input type="text" class="form-control" id="{{material.nombre_mat}}" value="{{ordenDerecho.nombre_mat}}">
+					    	</div>
+					    	<div class="dropdown col-md-4">
+					      	<button 	class="btn btn-default dropdown-toggle" 
+					      			type="button" 
+					      			id="dropdownMaterial" 
+					      			data-toggle="dropdown" 
+					      			aria-haspopup="true" 
+					      			aria-expanded="true"
+		      		       	>
+					       		 Selecciona material...
+					        	<span class="caret"></span>
+					      	</button>
+					      	<ul class="dropdown-menu w-100" aria-labelledby="dropdownMaterial">
+					        	<li ng-repeat="allMat in allMaterials">
+					        		<a class="dropdown-list">{{allMat.nombre_mat}}</a>
+				        		</li>
+					      	</ul>
+					    	</div>
+					  	</div>
+						<!-- Termina Panel de Seleccion de Material -->
+
+						<!-- Panel de Seleccion de Tecnologia -->						
+					  	<div class="form-group">
+					    	<label for="{{material.nombre_tec}}" class="col-md-3 control-label">Tecnologia:</label>
+					    	<div class="col-md-5">
+					      		<input type="text" class="form-control" id="{{material.nombre_tec}}" value="{{ordenDerecho.nombre_tec}}">
+					    	</div>
+					    	<div class="dropdown col-md-4">
+					      	<button 	class="btn btn-default dropdown-toggle" 
+					      			type="button" 
+					      			id="dropdownMaterial" 
+					      			data-toggle="dropdown" 
+					      			aria-haspopup="true" 
+					      			aria-expanded="true"
+		      		       	>
+					       		 Selecciona tecnologia...
+					        	<span class="caret"></span>
+					      	</button>
+					      	<ul class="dropdown-menu w-100" aria-labelledby="dropdownMaterial">
+					        	<li ng-repeat="allTec in allTechnologies">
+					        		<a class="dropdown-list">{{allTec.nombre_tec}}</a>
+				        		</li>
+					      	</ul>
+					    	</div>
+					  	</div>
+						<!-- Termina Panel de Seleccion de Tecnologia -->
+
+						<!-- Panel de Seleccion de Progresivo -->
+					  	<div class="form-group">
+					    	<label for="{{material.nombre_pro}}" class="col-md-3 control-label">Progresivo:</label>
+					    	<div class="col-md-5">
+					      		<input type="text" class="form-control" id="{{material.nombre_pro}}" value="{{ordenDerecho.nombre_pro}}">
+					    	</div>
+					    	<div class="dropdown col-md-4">
+					      	<button 	class="btn btn-default dropdown-toggle" 
+					      			type="button" 
+					      			id="dropdownMaterial" 
+					      			data-toggle="dropdown" 
+					      			aria-haspopup="true" 
+					      			aria-expanded="true"
+		      		       	>
+					       		 Selecciona progresivo...
+					        	<span class="caret"></span>
+					      	</button>
+					      	<ul class="dropdown-menu w-100" aria-labelledby="dropdownMaterial">
+					        	<li ng-repeat="allPro in allProgresives">
+					        		<a class="dropdown-list">{{allPro.nombre}}</a>
+				        		</li>
+					      	</ul>
+					    	</div>
+					  	</div>
+						<!-- Termina Panel de Seleccion de Progresivo -->
+
+						<!-- Seleccion de Color de Tinte -->													
+	  				  	<div class="form-group">
+		  				    	<label for="{{material.nombre_ct}}" class="col-md-3 control-label">Color de Tinte:</label>
+		  				    	<div class="col-md-5">
+		  				      		<input type="text" class="form-control" id="{{material.nombre_ct}}" value="{{ordenDerecho.nombre_ct}}">
+		  				    	</div>
+		  				    	<div class="dropdown col-md-4">
+		  				      	<button 	class="btn btn-default dropdown-toggle" 
+			  				      			type="button" 
+			  				      			id="dropdownMaterial" 
+			  				      			data-toggle="dropdown" 
+			  				      			aria-haspopup="true" 
+			  				      			aria-expanded="true"
+		  	      		       	>
+		  				       		 Selecciona color de tinte...
+		  				        	<span class="caret"></span>
+		  				      	</button>
+		  				      	<ul class="dropdown-menu w-100" aria-labelledby="dropdownMaterial">
+		  				        	<li ng-repeat="allCT in allColorTint">
+		  				        		<a class="dropdown-list">{{allCT.nombre}}</a>
+		  			        		</li>
+		  				      	</ul>
+		  				    	</div>
+  					  	</div>
+						<!-- Termina Seleccion de Color de Tinte -->
+
+						<!-- Seleccion del Tono del Tinte -->
+					  	<div class="form-group">
+					   	 <label for="{{material.tono}}" class="col-md-3 control-label">Tono del Tinte:</label>
+						    <div class="col-md-9">
+						      <input type="text" class="form-control" id="{{material.tono}}" value="{{ordenDerecho.tono}}">
+						    </div>
+						</div>
+						<!-- Termina Seleccion del Tono del Tinte -->
+					
+						<!-- Seleccion de Parejo o Disparejo -->
+						<div class="form-group">
+					 	   <label for="{{material.p_d}}" class="col-md-3 control-label">Parejo/Disparejo:</label>
+						    <div class="col-md-9">
+						      <input type="text" class="form-control" id="{{material.p_d}}" value="{{ordenDerecho.p_d}}">
+						    </div>
+						</div>
+						<!-- Termina Seleccion de Parejo o Disparejo -->
+					</div>
+					<!-- Termina Panel Primer Ojo -->
+
+					<div>
+					  <h2>Simple Collapsible</h2>
+					  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+					  <div id="demo" class="collapse in">
+					    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					  </div>
+					</div>
+						
+					</form>
+				</div>
+			<!-- 	<div class="col-md-6 order-form">
+				</div> -->
+			</div>
+			</div>
+		</ul>	
+</div>

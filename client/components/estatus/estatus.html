@@ -1,0 +1,96 @@
+<!-- Modal para Editar -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Edicion de Pedidos</h3>
+      </div>
+      <div class="modal-body">
+        <h4>¿Que parte(s) de la orden deseas editar?: </h4>
+	        <ul class="edit-parts">
+	        	<li>
+        			<input type="checkbox" ng-model="order.material" id="material">
+	        		Seccion de Materiales, Tecnologias...	
+	        	</li>
+
+	        	<li>
+        			<input type="checkbox" ng-model="order.dimension" id="dimension">
+	        		Seccion de Dimensiones
+	        	</li>
+
+	        	<li>
+        			<input type="checkbox" ng-model="order.service" id="service">
+	        		Seccion de Servicios
+	        	</li>
+
+	        	<li>
+        			<input type="radio">
+	        		Todas las secciones
+	        	</li>
+	        </ul>
+	        <button>Continuar</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="editOrder(order)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal para Editar -->
+
+
+<!-- Modal para Ver Pedido -->
+<div class="modal fade" id="modalSee" tabindex="-1" role="dialog" aria-llabelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		
+	</div>
+</div>
+<!-- Fin Modal para Ver Pedido -->
+
+<div class="row">
+	<div class="col-md-12">
+	<div class="table-des">
+		<h1 class="text-center">Estatus de Pedidos</h1>	
+
+			<!-- Tabla de Pedidos y sus Estados -->
+			<table class="table table-responsive color-white">
+				<tr>
+					<th>Folio del Pedido</th>
+					<th>Fecha de Orden</th>
+					<th>Estatus</th>
+					<th>Informacion</th>
+					<th>Editar</th>
+				</tr>
+				<tr ng-repeat="order in orderProcess">
+					<td>{{order.folio}}</td>
+					<td>{{order.fecha_solicitud}}</td>
+					<td>{{order.status}}</td>
+					<td><button class="btn btn-info" ng-click="showOrder(order.id_orden)">Ver Pedido</button></td>
+					<td ng-show="editOption(order.id_orden)" 
+						ng-model="order.id_orden" 
+					>
+								<button class="btn btn-info" 
+										ng-click="checkOrder(order.id_orden)"
+								>
+									Editar
+								</button>
+					</td>
+
+					<td ng-show="!editOption(order.id_orden)" 
+						ng-model="order.id_orden"
+					>
+							<button class="btn btn-danger"  
+									ng-click="checkOrder(order.id_orden)"
+							>
+								Editar
+							</button>
+					</td>
+				</tr>
+			</table>
+			<!-- Fin de Tabla de Pedidos y sus Estados -->
+
+		</div>		
+	</div>
+</div>

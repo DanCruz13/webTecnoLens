@@ -1,0 +1,54 @@
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/horizontal.css">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/superslides.css">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/sweetalert.css">
+		<link rel="stylesheet" type="text/css" href="/client/components/adds/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</head>
+	<body>
+		<div ui-view></div>
+		<div ui-view="headroom"></div>
+		<div ui-view="navbar"></div>
+		<div class="col-md-2">
+			<div ui-view="slide-menu"></div>	
+		</div>
+		<div class="col-md-8 col-md-offset-1">
+			<div ui-view="home"></div>
+		</div>
+	</body>
+	
+	<!-- Bootstrao components -->
+	<script type="text/javascript" src="/client/components/adds/js/jquery.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/menu.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/slider.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/jquery.superslides.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/sweetalert.min.js"></script>
+
+	<!-- Angular Material -->
+	<script type="text/javascript" src="/client/components/adds/js/angular.min.js"></script>
+	<script type="text/javascript" src="/client/components/adds/js/angular-ui-router.js"></script>
+
+	<!-- App -->
+	<script src="/client/app.js"></script>
+
+	<!-- Services -->
+	<script src="/client/components/shared/services/client-service.js"></script>
+
+	<!-- Controllers -->
+	<script src="/client/components/home/home-controller.js"></script>
+	<script src="/client/components/login/login-controller.js"></script>
+	<script src="/client/components/navbar/navbar-controller.js"></script>
+	<script src="/client/components/slide-menu/slide-menu-controller.js"></script>
+	<script src="/client/components/generate/generate-controller.js"></script>
+	<script src="/client/components/editar/editar-controller.js"></script>
+	<script src="/client/components/estatus/estatus-controller.js"></script>
+	<script src="/client/components/editMaterials/editMaterials-controller.js"></script>
+	<script src="/client/components/editDimensions/editDimensions-controller.js"></script>
+	<script src="/client/components/editServices/editServices-controller.js"></script>
+</html>

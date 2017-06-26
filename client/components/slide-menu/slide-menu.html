@@ -1,0 +1,60 @@
+<div>
+			<div class="toggle-menu">
+			 Menu<br>
+			<center> 	
+				<span class="glyphicon glyphicon-list icon-show"></span><br>
+				<span class="glyphicon glyphicon-shopping-cart icon-show"></span><br>
+				<span class="glyphicon glyphicon-folder-open icon-show"></span><br>
+				<span class="glyphicon glyphicon-user icon-show"></span><br>
+				<span class="glyphicon glyphicon-list-alt icon-show"></span>
+			</center>
+		</div>
+
+		<div class="sidebar-menu">
+			
+			<!-- remove close es fa-times -->
+			<i class="glyphicon glyphicon-remove remove-close"></i>
+			<center>
+				<a ng-click="changeLocation(changeL.status = 'homeMenu')">
+					<h1 class="boxed-item">
+						TECNO 
+						<span class="logo-bold">
+							LENS
+						</span>
+					</h1>
+				</a>
+				<h2 class="logo-title">Plataforma de pedidos</h2>
+			</center>
+
+			<ul class="navigation-selection">
+				<a ng-click="changeLocation(changeL.status = 'index')">
+					<li class="navigation-item">
+						INICIO
+					</li>
+				</a>
+				<a ng-click="changeLocation(changeL.status = 'generate')">
+					<li class="navigation-item">
+						GENERAR PEDIDO
+					</li>
+				</a>
+				<a ng-click="changeLocation(changeL.status = 'estatus')">
+					<li class="navigation-item">
+						LISTA DE PEDIDOS
+					</li>
+				</a>
+
+				<li class="navigation-item">HISTORIAL</li>
+				<li class="navigation-item">PERFIL</li>
+				<li class="navigation-item">CATALOGO</li>
+			</ul>
+
+			<center>
+				<a ng-click="logOut()">
+					<h1 class="boxed-item boxed-item-smaller">
+						<i class="glyphicon glyphicon-log-out"></i>
+						SALIR
+					</h1>
+				</a>
+			</center>
+		</div>
+</div>
