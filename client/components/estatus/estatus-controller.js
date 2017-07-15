@@ -6,6 +6,8 @@
 		$scope.orderProcess = [];
 		$scope.orderID = '';
 		$scope.sectionOrder = [];
+		$scope.pageSize = 10;
+		$scope.currentPage = 1;
 
 		$http({
 			method: "POST",
@@ -17,7 +19,9 @@
 			console.log(response);
 			$scope.orderProcess = response.data.orderData;
 			console.log($scope.orderProcess);
-		}), function(err){
+		}), function errorGETOUT(err){
+			console.log("Error, hay que salir de aqui");
+			window.location.href = "http://localhost:8050/#!";
 			console.log(err);
 		}
 
@@ -73,8 +77,9 @@
 			}
 		}
 
-		$scope.toogle = function(){
-
+		$scope.sort = function(keyname){
+			$scope.sortKey = keyname; 
+			$scope.reverse = !$scope.reverse;
 		}
 
 	}])

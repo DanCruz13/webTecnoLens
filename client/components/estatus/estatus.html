@@ -29,11 +29,10 @@
 	        		Todas las secciones
 	        	</li>
 	        </ul>
-	        <button>Continuar</button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="editOrder(order)">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" ng-click="editOrder(order)">Editar Pedido</button>
       </div>
     </div>
   </div>
@@ -52,45 +51,66 @@
 <div class="row">
 	<div class="col-md-12">
 	<div class="table-des">
-		<h1 class="text-center">Estatus de Pedidos</h1>	
-
+		<h1 class="text-center">Lista de Pedidos</h1>	
+		<form class="form-inline">
+			<div class="form-group">
+				<label>Busqueda</label>
+				<input type="text" ng-model="search" class="form-control" placeholder="Buscar">
+			</div>
+		</form>
 			<!-- Tabla de Pedidos y sus Estados -->
 			<table class="table table-responsive color-white">
-				<tr>
-					<th>Folio del Pedido</th>
-					<th>Fecha de Orden</th>
-					<th>Estatus</th>
-					<th>Informacion</th>
-					<th>Editar</th>
-				</tr>
-				<tr ng-repeat="order in orderProcess">
-					<td>{{order.folio}}</td>
-					<td>{{order.fecha_solicitud}}</td>
-					<td>{{order.status}}</td>
-					<td><button class="btn btn-info" ng-click="showOrder(order.id_orden)">Ver Pedido</button></td>
-					<td ng-show="editOption(order.id_orden)" 
-						ng-model="order.id_orden" 
-					>
-								<button class="btn btn-info" 
+				<thead>
+					<tr>
+						<th ng-click="sort('folio')">Folio del Pedido
+							<span class="glyphicon glyphicon glyphicon-sort font-10 cursor-p" ng-show="sortKey=='id" ng-class="('glyphicon-chevron-up':reverse, 'glyphicon.glyphicon-chevron-down:!reverse)"></span>
+						</th>
+						<th ng-click="sort('fecha_solicitud')">Fecha de Orden
+							<span class="glyphicon glyphicon glyphicon-sort font-10 cursor-p" ng-show="sortKey=='id" ng-class="('glyphicon-chevron-up':reverse, 'glyphicon.glyphicon-chevron-down:!reverse)"></span>
+						</th>
+						<th ng-click="sort('status')">Estatus
+							<span class="glyphicon glyphicon glyphicon-sort font-10 cursor-p" ng-show="sortKey=='id" ng-class="('glyphicon-chevron-up':reverse, 'glyphicon.glyphicon-chevron-down:!reverse)"></span>
+						</th>
+						<th>Informacion
+						</th>
+						<th>Editar
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="order in orderProcess|itemsPerPage:10|filter:search|orderBy:sortKey:reverse">
+						<td>{{order.folio}}</td>
+						<td>{{order.fecha_solicitud}}</td>
+						<td>{{order.status}}</td>
+						<td><button class="btn btn-info" ng-click="showOrder(order.id_orden)">Ver Pedido</button></td>
+						<td ng-show="editOption(order.id_orden)" 
+							ng-model="order.id_orden" 
+						>
+									<button class="btn btn-info" 
+											ng-click="checkOrder(order.id_orden)"
+									>
+										Editar
+									</button>
+						</td>
+
+						<td ng-show="!editOption(order.id_orden)" 
+							ng-model="order.id_orden"
+						>
+								<button class="btn btn-danger"  
 										ng-click="checkOrder(order.id_orden)"
 								>
 									Editar
 								</button>
-					</td>
-
-					<td ng-show="!editOption(order.id_orden)" 
-						ng-model="order.id_orden"
-					>
-							<button class="btn btn-danger"  
-									ng-click="checkOrder(order.id_orden)"
-							>
-								Editar
-							</button>
-					</td>
-				</tr>
+						</td>
+					</tr>
+				</tbody>
+				<dir-pagination-controls
+					max-size="5"
+					direction-links="true"
+					boundary-links="true" >
+				</dir-pagination-controls>
 			</table>
 			<!-- Fin de Tabla de Pedidos y sus Estados -->
-
-		</div>		
+		</div>
 	</div>
 </div>

@@ -1,5 +1,8 @@
 (function(window, angular, undefined){
-	angular.module('app', ['ui.router'])
+	angular.module('app', [
+		'ui.router',
+		'ui.bootstrap',
+		'angularUtils.directives.dirPagination'])
 	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 		$stateProvider
 			.state('login', {
@@ -14,8 +17,13 @@
 						templateUrl: '/client/components/home/home.html',
 						controller: 'homeCtrl'
 					},
-					'headroom': {
-						templateUrl: '/client/components/headroom/headroom.html',
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'	
+					// },
+					'navbar': {
+						templateUrl: '/client/components/navbar/navbar.html',
+						controller: 'navbarCtrl'
 					}
 				}
 			})
@@ -26,10 +34,10 @@
 						templateUrl:'/client/components/generate/generate.html',
 						controller: 'generateCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'	
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'	
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -43,10 +51,13 @@
 						templateUrl: '/client/components/editar/editar.html',
 						controller: 'editarCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'headroom': {
+					// 	templateUrl: '/client/components/headroom/headroom.html',
+					// }
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -60,10 +71,10 @@
 						templateUrl: '/client/components/estatus/estatus.html',
 						controller: 'estatusCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -77,10 +88,10 @@
 						templateUrl: '/client/components/perfil/perfil.html',
 						controller: 'perfilCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -94,10 +105,10 @@
 						templateUrl: '/client/components/editMaterials/editMaterials.html',
 						controller: 'editMatCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -111,10 +122,10 @@
 						templateUrl: '/client/components/editDimensions/editDimensions.html',
 						controller: 'editDimCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
@@ -128,17 +139,16 @@
 						templateUrl: '/client/components/editServices/editServices.html',
 						controller: 'editSerCtrl'
 					},
-					'slide-menu': {
-						templateUrl: '/client/components/slide-menu/slide-menu.html',
-						controller: 'smCtrl'
-					},
+					// 'slide-menu': {
+					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',
+					// 	controller: 'smCtrl'
+					// },
 					'navbar': {
 						templateUrl: '/client/components/navbar/navbar.html',
 						controller: 'navbarCtrl'
 					}
 				}
 			})
-
 		$urlRouterProvider.otherwise('/');
 	}])
 })(window, window.angular)
