@@ -54,6 +54,8 @@
 
 .w-100 { width: 100%; }
 
+.w200 { width: 200px; }
+.w250 { width: 250px; }
 .w300 { width: 300px; }
 .w350 { width: 350px; }
 .w400 { width: 400px; }
@@ -393,9 +395,22 @@ body
   margin-top: 20px;
   border-radius: 30px;
   background-color: rgba(17, 17, 17, 0.9);
+  /*background-color: #7cc576;*/
   opacity: 0.9;
   color: white;
   border: 5px solid #cbcbcb;
+  width: 95%;
+  text-align: center;
+}
+
+.table-des-v2
+{
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: rgba(136,202,132, 0.7);
+  opacity: 0.9;
+  color: black;
+  border: 2px solid #cbcbcb;
   width: 95%;
   text-align: center;
 }
@@ -472,15 +487,6 @@ body
 }
 
 /*Headroom*/
-
-header {
-  background: #000;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background-color: #fff; 
-}
-
 .menu {
   width: 90%;
   max-width: 1000px;
@@ -575,3 +581,12 @@ header {
 }
 
 /*Fin Headroom*/
+
+/*Profile Picture*/
+.profile-p {
+    width: 200px;
+    border: 5px solid #cbcbcb;
+    border-radius: 30px;
+}
+
+/*Fin Profile Picture*/

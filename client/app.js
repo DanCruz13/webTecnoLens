@@ -81,12 +81,12 @@
 					}
 				}
 			})
-			.state('perfil', {
-				url: '/perfil',
+			.state('user', {
+				url: '/user',
 				views: {
 					'home': {
-						templateUrl: '/client/components/perfil/perfil.html',
-						controller: 'perfilCtrl'
+						templateUrl: '/client/components/user/user.html',
+						controller: 'userCtrl'
 					},
 					// 'slide-menu': {
 					// 	templateUrl: '/client/components/slide-menu/slide-menu.html',

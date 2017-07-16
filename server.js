@@ -16,9 +16,12 @@ var clientController = require('./server/controllers/client-controller.js');
 //API
 var clientEstatus = require('./server/api/clientEstatus');
 var editOrder = require('./server/api/editOrder');
+var userData = require('./server/api/profileUser');
 
 app.use('/api/client/estatus', clientEstatus);
 app.use('/api/client/edit_materials', editOrder);
+app.use('/api/client/profile', userData);
+
 
 //Routes
 app.get('/', function(req, res){
