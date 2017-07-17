@@ -9,7 +9,6 @@ router.use(bodyParser.urlencoded({extended: true}))
 
 router.use(function(req, res, next){
 	var token = req.headers['auth-token'];
-	console.log(token);
 	jwt.verify(token, process.env.SECRET, function(err, decoded){
 		if (err){
 			res.status(400).send("El token es invalido");
@@ -24,8 +23,8 @@ router.use(function(req, res, next){
 
 //POST ENDPOINTS
 router.post('/request_userData', function(req, res){
-	var query = "SELECT nombre_cliente, ape_p, ape_m, rfc, direccion, telefono, razon_social, nomb_usuario, contraseña, correo FROM cliente c INNER JOIN usuarios u ON c.id_cliente = u.id_cliente WHERE c.id_cliente = " + req.user_id + ";";
-
+	var query = "SELECT nombre_cliente, ape_p, ape_m, rfc, direccion, telefono, razon_social, nomb_usuario, contraseña as password, correo FROM cliente c INNER JOIN usuarios u ON c.id_cliente = u.id_cliente WHERE c.id_cliente = " + req.user_id + ";";
+	console.log("Procesando la peticion...");
 	db.query(query).spread(function(result, metadata){
 		res.json({
 			userData: result
@@ -34,5 +33,9 @@ router.post('/request_userData', function(req, res){
 		res.status(500).send("Imposible procesar la peticion.");
 	})
 });
+
+router.patch('/updateProfile/' + req.user_id, function(req, res){
+	var query = "UPDATE"; 
+})
 
 module.exports = router;

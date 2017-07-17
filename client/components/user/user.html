@@ -1,25 +1,165 @@
 <div class="table-des-v2">
-	<h2>Perfil</h2>
+	<h1>Perfil</h1>
 	<div class="row">
 
-		<div class="col-md-3">
+		<!-- Foto de Perfil y Datos -->
+		<div class="col-md-4">
 			<img src="/client/components/adds/img/profile.jpg" class="w200 img-thumbnail">
-			Nombre: 
-			<input type="text">
-			<br>	
-			Razon Social:
-			<input type="text">
-		</div>
+			<div class="row">
 
-		<div class="col-md-4">
-			Contraseña: 
-			<input type="text">
-		</div>
+				<div class="col-md-4">
+					Nombre(s): 
+				</div>
 
-		<div class="col-md-4">
-			Contraseña: 
-			<input type="text">
+				<div class="col-md-8">
+					<div ng-hide="editarDP">
+						{{userProfile.nombre_cliente}} 
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" ng-hide="!editarDP" class="form-control" ng-model="newProfile.nombre_cliente">
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					Razon Social: 
+				</div>
+				<div class="col-md-8">
+					<div ng-hide="editarDP">
+						{{userProfile.razon_social}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" ng-hide="!editarDP" class="form-control" ng-model="newProfile.razon_social">
+					</div>
+				</div>
+			</div>
 		</div>
+		<!-- Termina Foto de Perfil y Datos -->
+
+		<!-- Bloque de datos Personales -->
+		<div class="col-md-4 text-left">
+			<h4>Datos Personales</h4> 
+			<div class="row">
+				<div class="col-md-4 padding-bottom-20">
+					Apellido Paterno:	
+				</div>
+				<div class="col-md-8 padding-bottom-20">
+					<div ng-hide="editarDP">
+						{{userProfile.ape_p}} 
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.ape_p">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-20">
+					Apellido Materno:	
+				</div>
+				<div class="col-md-8 padding-bottom-20">
+					<div ng-hide="editarDP">
+						{{userProfile.ape_m}}	
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.ape_m">
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-20">
+					RFC:
+				</div>
+				<div class="col-md-8 padding-bottom-20">
+					<div ng-hide="editarDP">
+						{{userProfile.rfc}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.rfc">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-20">
+					Direccion:	
+				</div>
+				<div class="col-md-8 padding-bottom-20">
+					<div ng-hide="editarDP">
+						{{userProfile.direccion}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.direccion">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-20">
+					Telefono:
+				</div>
+				<div class="col-md-8 padding-bottom-20">
+					<div ng-hide="editarDP">
+						{{userProfile.telefono}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.telefono">
+					</div>
+				</div>
+			</div>
+			<div ng-hide="editarDP">
+				<button class="btn btn-primary" ng-click="editarDP='true'">Editar</button>
+			</div>
+			<div ng-hide="!editarDP">
+				<button class="btn btn-success" ng-click="saveData(newProfile)">Guardar</button>
+				<button class="btn btn-danger" ng-click="cancelEditDP()">Cancelar</button>
+			</div>
+		</div>
+		<!-- Termina bloque de datos Personales -->
+
+		<!-- Bloque de datos de usuario-->
+		<div class="col-md-4 text-left">
+			<h4>Datos de Usuario</h4>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-30">
+					Nombre de Usuario:
+				</div>
+				<div class="col-md-8 padding-bottom-30">
+					<div ng-hide="editarDP">
+						{{userProfile.nomb_usuario}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.nomb_usuario">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-30">
+					Contraseña:
+				</div>
+				<div class="col-md-8 padding-bottom-30">
+					<div ng-hide="editarDP">
+						{{userProfile.password}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="password" class="form-control" ng-model="newProfile.password">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 padding-bottom-30">
+					Correo:
+				</div>
+				<div class="col-md-8 padding-bottom-30">
+					<div ng-hide="editarDP">
+						{{userProfile.correo}}
+					</div>
+					<div ng-hide="!editarDP">
+						<input type="text" class="form-control" ng-model="newProfile.correo">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Termina bloque de datos de usuario -->
 
 	</div>
 </div>
