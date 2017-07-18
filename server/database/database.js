@@ -7,5 +7,5 @@ var sequelize = new Sequelize('postgresql://localhost/Test_TecnoLens',{
 		}
 	}
 });
-
+// postgresql://tecnol.cffap7hiyzg1.us-east-2.rds.amazonaws.com/Test_TecnoLens
 module.exports = sequelize;

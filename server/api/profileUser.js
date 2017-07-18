@@ -22,7 +22,7 @@ router.use(function(req, res, next){
 //GET ENDPOINTS
 
 //POST ENDPOINTS
-router.post('/request_userData', function(req, res){
+router.post('/request_profileUser', function(req, res){
 	var query = "SELECT nombre_cliente, ape_p, ape_m, rfc, direccion, telefono, razon_social, nomb_usuario, contraseña as password, correo FROM cliente c INNER JOIN usuarios u ON c.id_cliente = u.id_cliente WHERE c.id_cliente = " + req.user_id + ";";
 	console.log("Procesando la peticion...");
 	db.query(query).spread(function(result, metadata){
@@ -34,8 +34,34 @@ router.post('/request_userData', function(req, res){
 	})
 });
 
-router.patch('/updateProfile/' + req.user_id, function(req, res){
-	var query = "UPDATE"; 
-})
+router.get('/request_userData', function(req, res){
+	var query = "SELECT nomb_usuario, contraseña as password, correo FROM usuarios WHERE id_cliente = "+req.user_id+";"; 
+
+	db.query(query).spread(function(result, metadata){
+		res.json({
+			userD: result
+		})
+	}).catch(function(err){
+		res.status(500).send("Imposible procesar la peticion.");
+		console.log(err);
+	})
+});
+
+router.get('/request_personalData', function(req, res){
+	var query = "SELECT * FROM cliente WHERE id_cliente ="+req.user_id+";";
+
+	db.query(query).spread(function(result, metadata){
+		res.json({
+			userP: result
+		})
+	}).catch(function(err){
+		res.status(500).send("Imposible procesar la peticion.");
+		console.log(err);
+	})
+});
+
+// router.patch('/updateProfile/' + req.user_id, function(req, res){
+// 	var query = "UPDATE"; 
+// })
 
 module.exports = router;
